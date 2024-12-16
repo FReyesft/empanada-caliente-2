@@ -1,6 +1,6 @@
 import { IonText, IonRow, IonCol, IonGrid } from '@ionic/react';
 
-function InGame() {
+function SelectTheme() {
 	return (
 		<IonGrid>
 			<IonRow>
@@ -24,4 +24,4 @@ function InGame() {
 	);
 };
 
-export default InGame
+export default SelectTheme

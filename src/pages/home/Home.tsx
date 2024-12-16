@@ -1,4 +1,4 @@
-import { IonButton, IonImg, IonPage } from '@ionic/react';
+import { IonButton, IonImg } from '@ionic/react';
 import logo from '@assets/images/logo.avif';
 import titleImage from '@assets/images/title-image.avif'
 import './Home.css';
@@ -20,8 +20,9 @@ const Home: React.FC = () => {
           alt="logo - Empanada Caliente"
         />
       </div>
-      <div className="play-button_container">
-        <IonButton expand='full' className="play-button">¡Jugar!</IonButton>
+      <div className="buttons-container">
+        <IonButton color='primary' expand='full' href='/select-theme'>¡Jugar!</IonButton>
+        <IonButton color='medium' expand='full' href='/'>¿Como jugar?</IonButton>
       </div>
     </div>
   );

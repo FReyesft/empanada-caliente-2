@@ -1,0 +1,48 @@
+export interface Challenge {
+	id: number;
+	title: string;
+	description: string;
+}
+
+export const challenges: Challenge[] = [
+	{ id: 1, title: 'Intercambiar prendas con las personas del frente', description: '¡La persona a tu derecha elige cuál!' },
+	{ id: 2, title: 'Besar a alguien del mismo sexo en la mejilla', description: '¡Atrévete a romper tabúes!' },
+	{ id: 3, title: 'Realizar una serenata a alguien del grupo', description: 'Canta una canción romántica o divertida para esa persona especial.' },
+	{ id: 4, title: 'Hacer una llamada telefónica a un ex', description: '¿Quién sabe qué podría salir de esto?' },
+	{ id: 5, title: 'Compartir un secreto vergonzoso', description: '¡Prepárate para un poco de vergüenza!' },
+	{ id: 6, title: 'Enviar un mensaje picante a un contacto al azar', description: '¡Es hora de calentar las cosas!' },
+	{ id: 7, title: 'Actua como alguien en el grupo', description: '¡Deja que todos se rían un poco a tu costa!' },
+	{ id: 8, title: 'Hacer una pose sensual', description: '¡Muéstrales a todos tu lado más sexy!' },
+	{ id: 9, title: 'Contar una fantasía secreta', description: '¡Prepárate para abrirte y compartir!' },
+	{ id: 10, title: 'Bailar una canción sexy', description: '¡Pon música y sacude ese cuerpo!, ¿No se un reggetoncito?' },
+	{ id: 11, title: 'Besa a alguien', description: '¡Sin miedo, elije el/la que te gusta!' },
+	{ id: 12, title: 'Deja que alguien del grupo te de un trago', description: '¡Fondooo, fondoo!' },
+	{ id: 13, title: 'Hacer 10 flexiones', description: '¡Demuestra tu fuerza!' },
+	{ id: 14, title: 'Imitar a un famoso', description: '¡A ver si los demás pueden adivinar quién es!' },
+	{ id: 15, title: 'Pedirle a alguien del grupo que te haga un masaje de 2 minutos', description: '¡Hora de relajarse!' },
+	{ id: 16, title: 'Publicar una foto vergonzosa en redes sociales', description: '¡Es momento de ser valiente!' },
+	{ id: 17, title: 'Beber un trago de algo amargo o ácido', description: '¡Prepárate para hacer una mueca!' },
+	{ id: 18, title: 'Hacer una llamada a un número aleatorio y decir "Te amo"', description: '¡Vamos a ver qué pasa!' },
+	{ id: 19, title: 'Hacer una confesión amorosa falsa o no, a alguien del grupo', description: '¡A ver cómo reacciona!' },
+	{ id: 20, title: 'Hacer una imitación de un animal', description: '¡Que todos intenten adivinar cuál es!' },
+	{ id: 21, title: 'Cambiar de lugar con la persona a tu izquierda por 3 rondas', description: '¡Mueve el asiento!' },
+	{ id: 22, title: 'Hablar con acento extranjero por 2 rondas', description: '¡Elige un acento y manténlo!' },
+	{ id: 23, title: 'Hacer un brindis gracioso', description: '¡Que todos levanten sus vasos!' },
+	{ id: 24, title: 'Contar tu chiste más divertido', description: '¡Hora de reír!' },
+	{ id: 25, title: 'Hacer una confesión incómoda', description: '¡Suelta la verdad!' },
+	{ id: 26, title: 'Dar una vuelta al cuarto saltando en un pie', description: '¡No te caigas!' },
+	{ id: 27, title: 'Mostrar la última foto en tu celular', description: '¡A ver qué tienes ahí!' },
+	{ id: 28, title: 'Permitir que alguien te pinte la cara', description: '¡Prepárate para un nuevo look!' },
+	{ id: 29, title: 'Contar la historia más embarazosa de tu infancia', description: '¡Momento de nostalgia y risas!' },
+	{ id: 30, title: 'Hacer un dibujo con los ojos cerrados y que los demás adivinen qué es', description: '¡A ver tu talento artístico!' },
+	{ id: 31, title: 'Cantar el coro de una canción famosa sin música', description: '¡Que todos intenten adivinar cuál es!' },
+	{ id: 32, title: 'Dejar que alguien revise tu historial de búsqueda por 2 minutos', description: '¡Esperemos que no haya sorpresas!' },
+	{ id: 33, title: 'Intercambiar zapatos con alguien del grupo por el resto del juego', description: '¡Cambia tu estilo!' },
+	{ id: 34, title: 'Llamar a tus padres y decirles algo sorprendente', description: '¡Momento de sorprenderlos!' },
+	{ id: 35, title: 'Realizar una postura de yoga complicada', description: '¡A ver tu flexibilidad!' },
+	{ id: 36, title: 'Hacer un TikTok con alguien del grupo', description: '¡Hora de viralizarse!' },
+	{ id: 37, title: 'Contar una broma de mal gusto', description: '¡Prepárate para reacciones variadas!' },
+	{ id: 38, title: 'Imitar a un superhéroe', description: '¡Deja que los demás adivinen cuál es!' },
+	{ id: 39, title: 'Hablar sin parar durante 1 minuto sobre un tema elegido por el grupo', description: '¡A ver tu habilidad de improvisación!' },
+	{ id: 40, title: 'Actuar una escena de una película famosa', description: '¡Que todos intenten adivinar cuál es!' },
+];

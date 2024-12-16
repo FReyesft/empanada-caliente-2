@@ -1,14 +1,17 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonButton, IonIcon } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButtons, IonButton, IonIcon, IonBackButton } from '@ionic/react';
 import { menu, search } from 'ionicons/icons';
 
 interface LayoutProps {
   title: string;
   children: React.ReactNode;
-  showToolbar?: boolean; // Para ocultar el toolbar si es necesario
-  startButton?: boolean; // Para mostrar un botón en el lado izquierdo
-  endButton?: boolean;   // Para mostrar un botón en el lado derecho
-  onStartButtonClick?: () => void; // Acción para el botón de la izquierda
-  onEndButtonClick?: () => void;   // Acción para el botón de la derecha
+  showToolbar?: boolean;
+  startButton?: boolean;
+  endButton?: boolean;
+  showBackButton?: boolean;
+  backButtonText?: string;
+  backButtonUrl?: string;
+  onStartButtonClick?: () => void;
+  onEndButtonClick?: () => void;
 }
 
 const Layout: React.FC<LayoutProps> = ({
@@ -17,6 +20,9 @@ const Layout: React.FC<LayoutProps> = ({
   showToolbar = true,
   startButton = false,
   endButton = false,
+  showBackButton = false,
+  backButtonText = 'Atras',
+  backButtonUrl = '/',
   onStartButtonClick,
   onEndButtonClick,
 }) => {
@@ -26,6 +32,7 @@ const Layout: React.FC<LayoutProps> = ({
         {showToolbar && (
           <IonToolbar className="ion-toolbar-translucent">
             <IonButtons slot="start">
+              {showBackButton && <IonBackButton text={backButtonText} defaultHref={backButtonUrl} />}
               {startButton && (
                 <IonButton onClick={onStartButtonClick}>
                   <IonIcon icon={menu} />
