@@ -1,0 +1,7 @@
+{
+  "name": "empanada-caliente",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}
