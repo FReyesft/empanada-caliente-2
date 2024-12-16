@@ -1,21 +1,15 @@
-type IconName = "shirt-sharp" | "map" | "calendar-sharp" | "tv-sharp" | "football" | "color-filter-outline" | "musical-note" | "pizza";
-
-export interface Theme {
-	id: number;
-	name: string;
-	icon: IconName;
-	color: string;
-}
+import { Theme } from "../interfaces/game-themes.interfarce";
+import { shirtSharp, map, calendarSharp, tvSharp, football, colorFilterOutline, musicalNote, pizza } from 'ionicons/icons';
 
 export const themes: Theme[] = [
-	{ id: 0, name: 'TODOS', icon: 'color-filter-outline', color: '#777' },
-	{ id: 1, name: 'CULTURA COLOMBIANA', icon: "shirt-sharp", color: '#EE6757' },
-	{ id: 2, name: 'GEOGRAFÍA Y LUGARES DE INTERES', icon: "map", color: '#FACB12' },
-	{ id: 3, name: 'HISTORIA COLOMBIANA', icon: "calendar-sharp", color: '#0C1421' },
-	{ id: 4, name: 'CINE Y TELEVISIÓN', icon: "tv-sharp", color: '#003AFF' },
-	{ id: 5, name: 'DEPORTES', icon: "football", color: '#B81928' },
-	{ id: 6, name: 'MÚSICA', icon: "musical-note", color: '#888' },
-	{ id: 7, name: 'COMIDA Y BEBIDA', icon: "pizza", color: '#a7b3cc'},
+  { id: 0, name: 'TODOS', icon: colorFilterOutline, color: '#777' },
+  { id: 1, name: 'CULTURA COLOMBIANA', icon: shirtSharp, color: '#EE6757' },
+  { id: 2, name: 'GEOGRAFÍA Y LUGARES DE INTERES', icon: map, color: '#FACB12' },
+  { id: 3, name: 'HISTORIA COLOMBIANA', icon: calendarSharp, color: '#0C1421' },
+  { id: 4, name: 'CINE Y TELEVISIÓN', icon: tvSharp, color: '#003AFF' },
+  { id: 5, name: 'DEPORTES', icon: football, color: '#B81928' },
+  { id: 6, name: 'MÚSICA', icon: musicalNote, color: '#888' },
+  { id: 7, name: 'COMIDA Y BEBIDA', icon: pizza, color: '#a7b3cc' },
 ];
 
 export interface Question {
