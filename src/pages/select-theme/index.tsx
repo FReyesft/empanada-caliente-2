@@ -5,7 +5,7 @@ import { flame } from 'ionicons/icons';
 import { useEffect, useState } from 'react';
 
 const SelectTheme: React.FC = () => {
-	const [empanadaMode, setEmpanadaMode] = useState<boolean>(false); 
+	const [empanadaMode, setEmpanadaMode] = useState<boolean>(false);
 	const history = useHistory();
 
 	const handleThemeSelect = (themeId: number) => {
@@ -43,7 +43,6 @@ const SelectTheme: React.FC = () => {
 								onIonChange={() => handleEmpanadaMode()}
 							/>
 						</IonItem>
-
 						{themes.map((theme) => (
 							<IonItem
 								key={theme.id}
