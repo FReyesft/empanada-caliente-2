@@ -32,6 +32,8 @@ import '@ionic/react/css/palettes/dark.system.css';
 
 /* Theme variables */
 import './theme/variables.css';
+import Layout from './layout/Layout';
+import InGame from './pages/inGame';
 
 setupIonicReact();
 
@@ -40,10 +42,17 @@ const App: React.FC = () => (
     <IonReactRouter>
       <IonRouterOutlet>
         <Route exact path="/home">
-          <Home />
+          <Layout showToolbar={false} title="Home">
+            <Home />
+          </Layout>
         </Route>
         <Route exact path="/">
           <Redirect to="/home" />
+        </Route>
+        <Route exact path="/in-game">
+          <Layout startButton title="Jugando">
+            <InGame />
+          </Layout>
         </Route>
       </IonRouterOutlet>
     </IonReactRouter>

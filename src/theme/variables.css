@@ -1,2 +1,32 @@
-/* For information on how to create your own theme, please see:
-http://ionicframework.com/docs/theming/ */
+:root {
+  /* Main Colors */
+  --ion-color-primary: #FF6F00; /* Empanada Yellow */
+  --ion-color-tertiary: #FFB74D; /* Soft Yellow */
+
+  /* Background Colors */
+  --ion-background-color: #fffefa; /* Soft pastel background */
+
+  /* Text Colors */
+  --ion-text-color: #3E3E3E; /* Dark gray for text */
+  --ion-text-color-light: #fffefa; /* Light gray for secondary text */
+
+  /* Button Colors */
+	--ion-activated: #F1B80D;
+  --ion-button-background: #F1B80D; /* Button background in Empanada Yellow */
+  --ion-button-color: #3E3E3E; /* Button text color */
+  --ion-button-hover-background: #FF6F00; /* Hover background color for buttons */
+  --ion-button-border-radius: 20px; /* Rounded corners for buttons */
+
+  /* Border Colors */
+  --ion-border-color: #FFB74D; /* Soft border color */
+  --ion-border-radius: 12px; /* Default border radius for elements */
+
+  /* Icon Colors */
+  --ion-icon-color: #3E3E3E; /* Dark gray for icons */
+  --ion-icon-color-hover: #FF6F00; /* Icon color when hovered (orange) */
+
+  /* Card Colors */
+  --ion-card-background: #fffefa; /* Soft background color for cards */
+  --ion-card-border-color: #FF6F00; /* Border color for cards */
+}
+
