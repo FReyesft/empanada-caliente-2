@@ -2,7 +2,6 @@ import { IonGrid, IonRow, IonCol, IonText, IonList, IonItem, IonLabel, IonIcon, 
 import { useHistory } from 'react-router-dom';
 import { themes } from '../../utils/themes';
 import { flame } from 'ionicons/icons';
-import { useEffect } from 'react';
 import { useEmpanadaStore } from '../../store/empanada-mode.store';
 
 const SelectTheme: React.FC = () => {
@@ -14,10 +13,6 @@ const SelectTheme: React.FC = () => {
 		console.log('Tema seleccionado:', themeId);
 		history.push(`/quiz/${themeId}`);
 	};
-
-	useEffect(() => {
-		console.log('Modo Empanada Caliente:', empanadaMode ? 'Activado' : 'Desactivado');
-	}, [empanadaMode]);
 
 	return (
 		<IonGrid>
@@ -38,7 +33,7 @@ const SelectTheme: React.FC = () => {
 							<IonToggle
 								slot="end"
 								checked={empanadaMode}
-								onIonChange={() => toggleEmpanadaMode}
+								onIonChange={() => toggleEmpanadaMode()}
 							/>
 						</IonItem>
 						{themes.map((theme) => (
