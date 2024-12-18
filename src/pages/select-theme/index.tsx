@@ -3,15 +3,17 @@ import { useHistory } from 'react-router-dom';
 import { themes } from '../../utils/themes';
 import { flame } from 'ionicons/icons';
 import { useEmpanadaStore } from '../../store/empanada-mode.store';
+import { useThemeSelected } from '../../store/theme-selected.store';
+import { Theme } from '../../interfaces/game-themes.interfarce';
 
 const SelectTheme: React.FC = () => {
-  const { empanadaMode, toggleEmpanadaMode } = useEmpanadaStore();
-
+	const { empanadaMode, toggleEmpanadaMode } = useEmpanadaStore();
+	const { selectTheme } = useThemeSelected();
 	const history = useHistory();
 
-	const handleThemeSelect = (themeId: number) => {
-		console.log('Tema seleccionado:', themeId);
-		history.push(`/quiz/${themeId}`);
+	const handleThemeSelect = (theme: Theme) => {
+		selectTheme(theme);
+		history.push(`/quiz`);
 	};
 
 	return (
@@ -40,7 +42,7 @@ const SelectTheme: React.FC = () => {
 							<IonItem
 								key={theme.id}
 								button
-								onClick={() => handleThemeSelect(theme.id)}
+								onClick={() => handleThemeSelect(theme)}
 							>
 								<IonIcon slot="start" icon={theme.icon} style={{ color: theme.color }} />
 								<IonLabel>{theme.name}</IonLabel>

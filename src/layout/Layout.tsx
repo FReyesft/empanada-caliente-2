@@ -51,7 +51,9 @@ const Layout: React.FC<LayoutProps> = ({
         )}
       </IonHeader>
       <IonContent fullscreen>
-        {children}
+        <div className='ion-content'>
+          {children}
+        </div>
       </IonContent>
     </IonPage>
   );

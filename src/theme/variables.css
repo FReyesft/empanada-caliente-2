@@ -30,3 +30,13 @@
   --ion-card-border-color: #FF6F00; /* Border color for cards */
 }
 
+.ion-content {
+  padding-inline: 8px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  height: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 8px 0;
+}

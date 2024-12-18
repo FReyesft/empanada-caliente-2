@@ -34,6 +34,7 @@ import '@ionic/react/css/palettes/dark.system.css';
 import './theme/variables.css';
 import Layout from './layout/Layout';
 import SelectTheme from './pages/select-theme';
+import InGame from './pages/quiz';
 
 setupIonicReact();
 
@@ -49,6 +50,11 @@ const App: React.FC = () => (
         <Route exact path="/select-theme">
           <Layout showBackButton title="Selecciona un tema">
             <SelectTheme />
+          </Layout>
+        </Route>
+        <Route exact path="/quiz">
+          <Layout showBackButton backButtonUrl='/select-theme' title='Empanada Caliente'>
+            <InGame />
           </Layout>
         </Route>
       </IonRouterOutlet>
