@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useQuestions } from "../../hooks/useQuestions";
 import { useThemeSelected } from "../../store/theme-selected.store";
-import logo from '@assets/images/logo.avif';
-import './style.css';
-import sprite from '@assets/images/states.png';
 import { IonButton } from "@ionic/react";
 import { useHistory } from "react-router";
+import './style.css';
 
 const Quiz: React.FC = () => {
   const { themeSelected } = useThemeSelected();
@@ -37,12 +35,12 @@ const Quiz: React.FC = () => {
   }
 
   const getEmpanadaState = (timer: number): number => {
-    if (timer > 40) return 2;
-    if (timer > 30) return 2;
+    if (timer > 40) return 0;
+    if (timer > 30) return 1;
     if (timer > 20) return 2;
-    if (timer > 10) return 2;
-    if (timer > 0) return 2;
-    return 3;
+    if (timer > 10) return 3;
+    if (timer > 0) return 4;
+    return 5;
   };
 
   const empanadaState = getEmpanadaState(timer);
