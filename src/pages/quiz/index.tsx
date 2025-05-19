@@ -1,14 +1,18 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useQuestions } from "../../hooks/useQuestions";
 import { useThemeSelected } from "../../store/theme-selected.store";
+import { useEmpanadaStore } from "../../store/empanada-mode.store";
 import { useHistory } from "react-router";
-import { IonButton } from "@ionic/react";
+import { IonButton, IonModal } from "@ionic/react";
 import tic from '../../assets/sounds/tick-1.mp3';
 import gameOver from '../../assets/sounds/game-over.mp3';
+import { IonIcon } from "@ionic/react";
+import { checkmarkCircle, refreshCircle } from "ionicons/icons";
 import './style.css';
 
 const Quiz: React.FC = () => {
   const { themeSelected } = useThemeSelected();
+  const { empanadaMode } = useEmpanadaStore();
   const { question, getRandomQuestion } = useQuestions();
   const [currentQuestion, setCurrentQuestion] = useState(question);
   const [previousQuestionId, setPreviousQuestionId] = useState<number | null>(null);
@@ -44,7 +48,7 @@ const Quiz: React.FC = () => {
 
   const initTimer = () => {
     clearTimer();
-    const initialTime = Math.floor(Math.random() * (50 - 20 + 1)) + 30;
+    const initialTime = Math.floor(Math.random() * (30 - 20 + 1)) + 30;
     setTimer(initialTime);
     setIsPlaying(true);
 
@@ -54,6 +58,7 @@ const Quiz: React.FC = () => {
           setIsPlaying(false);
           clearTimer();
           if (gameOverSound.current) {
+            modal.current?.present();
             gameOverSound.current.currentTime = 0;
             gameOverSound.current?.play();
           }
@@ -91,8 +96,35 @@ const Quiz: React.FC = () => {
 
   const empanadaState = getEmpanadaState(timer);
 
+  const modal = useRef<HTMLIonModalElement>(null);
+
+  const closeModal = () => {
+    modal.current?.dismiss();
+  }
+
   return (
     <div className="container-all">
+      <IonModal id="challenge-modal" ref={modal}>
+        <div className="modal-content">
+          <h3 className="modal-subtitle">😵‍💫 ¡Ups... perdiste!</h3>
+          <h2 className="modal-title">🔥 Reto del momento</h2>
+          <p className="modal-description">
+            Responde correctamente esta pregunta antes de que se acabe el tiempo. ⏰<br />
+            ¡Demuestra de qué estás hecho! 💪
+          </p>
+
+          <div className="modal-buttons">
+            <IonButton size="small" color="success" onClick={closeModal}>
+              <IonIcon icon={checkmarkCircle} slot="start" />
+              Aceptar
+            </IonButton>
+            <IonButton size="small" color="warning">
+              <IonIcon icon={refreshCircle} slot="start" />
+              Cambiar reto
+            </IonButton>
+          </div>
+        </div>
+      </IonModal>
       <h2 className="title">{themeSelected?.name}</h2>
       <div className="container">
         <div className={`sprite state-${empanadaState} ${isPlaying ? 'tic-animation' : ''}`}></div>

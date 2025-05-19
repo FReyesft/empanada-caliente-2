@@ -6,7 +6,7 @@
   flex-direction: column;
   height: 100%;
   width: 100%;
-  background: linear-gradient(50deg,#ff9900, #ffc163);
+  background: linear-gradient(50deg, #ff9900, #ffc163);
 }
 
 .container {
@@ -53,20 +53,39 @@
   background-size: 270% 270%;
 }
 
-.state-0 { background-position: 10% -10%; }
-.state-1 { background-position: 87% -10%; }
-.state-2 { background-position: 10% 46%; }
-.state-3 { background-position: 86% 42%; }
-.state-4 { background-position: 10% 100%; }
-.state-5 { background-position: 87% 95%; }
+.state-0 {
+  background-position: 10% -10%;
+}
+
+.state-1 {
+  background-position: 87% -10%;
+}
+
+.state-2 {
+  background-position: 10% 46%;
+}
+
+.state-3 {
+  background-position: 86% 42%;
+}
+
+.state-4 {
+  background-position: 10% 100%;
+}
+
+.state-5 {
+  background-position: 87% 95%;
+}
 
 @keyframes tic-scale {
   0% {
     transform: scale(1);
   }
+
   30% {
     transform: scale(1.05);
   }
+
   100% {
     transform: scale(1);
   }
@@ -74,4 +93,105 @@
 
 .tic-animation {
   animation: tic-scale 1s ease-in-out infinite;
+}
+
+ion-modal#challenge-modal {
+  --width: fit-content;
+  --min-width: 250px;
+  --max-width: 350px;
+  --height: fit-content;
+  --border-radius: 6px;
+  --box-shadow: 0 28px 48px rgba(0, 0, 0, 0.4);
+}
+
+ion-modal#challenge-modal h1 {
+  margin: 20px 20px 10px 20px;
+}
+
+ion-modal#challenge-modal ion-icon {
+  margin-right: 6px;
+  width: 48px;
+  height: 48px;
+  padding: 4px 0;
+  color: #fff;
+}
+
+ion-modal#challenge-modal .wrapper {
+  margin-bottom: 10px;
+}
+
+.modal-content {
+  padding: 32px 24px;
+  text-align: center;
+  border-radius: 16px;
+  background-color: #fff;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-subtitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  color: #3e8ef7;
+}
+
+.modal-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #e53935;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+.modal-icon {
+  font-size: 2rem;
+}
+
+.modal-icon-title {
+  color: #3e8ef7 !important;
+  font-size: 2rem;
+}
+
+.modal-description {
+  font-size: 1.15rem;
+  color: #444;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.modal-buttons ion-button {
+  font-weight: 600;
+  border-radius: 12px;
+  transition: transform 0.2s ease;
+}
+
+.modal-buttons ion-button:hover {
+  transform: scale(1.05);
 }
