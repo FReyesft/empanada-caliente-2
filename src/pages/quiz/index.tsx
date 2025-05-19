@@ -58,9 +58,14 @@ const Quiz: React.FC = () => {
           setIsPlaying(false);
           clearTimer();
           if (gameOverSound.current) {
-            modal.current?.present();
             gameOverSound.current.currentTime = 0;
             gameOverSound.current?.play();
+
+            setTimeout(() => {
+              if (empanadaMode) {
+                modal.current?.present();
+              }
+            }, 600)
           }
           return 0;
         }
@@ -130,7 +135,7 @@ const Quiz: React.FC = () => {
         <div className={`sprite state-${empanadaState} ${isPlaying ? 'tic-animation' : ''}`}></div>
         <div className="question-container">
           <p className="current-question">{currentQuestion?.question}</p>
-          <IonButton onClick={handleNextQuestion}>Cambiar pregunta</IonButton>
+          <IonButton onClick={handleNextQuestion}>{timer === 0 ? 'Reiniciar' : 'Cambiar pregunta'}</IonButton>
         </div>
       </div>
     </div>
