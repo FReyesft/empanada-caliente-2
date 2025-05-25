@@ -22,8 +22,8 @@ const Home: React.FC = () => {
       </div>
       <div className="buttons-container">
         <IonButton color='primary' expand='full' href='/select-theme'>¡Jugar!</IonButton>
-        <IonButton color='medium' expand='full' href='/'>¿Como jugar?</IonButton>
       </div>
+        <p className='credits'>Por @FReyeSFT</p>
     </div>
   );
 };

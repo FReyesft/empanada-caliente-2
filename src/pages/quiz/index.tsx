@@ -9,6 +9,7 @@ import gameOver from '../../assets/sounds/game-over.mp3';
 import { IonIcon } from "@ionic/react";
 import { checkmarkCircle, refreshCircle } from "ionicons/icons";
 import './style.css';
+import { useChallenge } from "../../hooks/useChallenge";
 
 const Quiz: React.FC = () => {
   const { themeSelected } = useThemeSelected();
@@ -38,6 +39,8 @@ const Quiz: React.FC = () => {
       history.push('/');
     }
   }, [themeSelected, history]);
+
+  const { currentChallenge, changeChallenge } = useChallenge();
 
   const clearTimer = () => {
     if (intervalRef.current) {
@@ -109,21 +112,17 @@ const Quiz: React.FC = () => {
 
   return (
     <div className="container-all">
-      <IonModal id="challenge-modal" ref={modal}>
+      <IonModal id="challenge-modal" ref={modal} backdropDismiss={false}>
         <div className="modal-content">
           <h3 className="modal-subtitle">😵‍💫 ¡Ups... perdiste!</h3>
           <h2 className="modal-title">🔥 Reto del momento</h2>
-          <p className="modal-description">
-            Responde correctamente esta pregunta antes de que se acabe el tiempo. ⏰<br />
-            ¡Demuestra de qué estás hecho! 💪
-          </p>
-
+          <p className="modal-description">{currentChallenge?.title} <br /> {currentChallenge?.description}</p>
           <div className="modal-buttons">
             <IonButton size="small" color="success" onClick={closeModal}>
               <IonIcon icon={checkmarkCircle} slot="start" />
               Aceptar
             </IonButton>
-            <IonButton size="small" color="warning">
+            <IonButton onClick={changeChallenge} size="small" color="warning">
               <IonIcon icon={refreshCircle} slot="start" />
               Cambiar reto
             </IonButton>

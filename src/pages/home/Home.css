@@ -51,3 +51,8 @@
     height: 250px;
   }
 }
+
+.credits {
+  position: absolute;
+  bottom: 12px;
+}
